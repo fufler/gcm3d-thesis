@@ -1,16 +1,26 @@
-\documentclass[14pt]{article}
+\documentclass[a4paper,14pt]{extarticle}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
-\usepackage{amssymb,amsfonts,amsmath,mathtext,cite,enumerate,float,geometry}
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtext}
+\usepackage{cite}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage[top=1.5cm,bottom=1.5cm,left=2.5cm,right=1.5cm]{geometry}
 \usepackage[unicode]{hyperref}
-\usepackage{graphicx,color}
-\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{color}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage[format=hang, labelsep=period, margin=10pt, figurename=Рис.]{caption}
 \usepackage{listings}
-%\usepackage{courier}
-\usepackage{caption}
-\usepackage{listings}
+%\usepackage{showkeys}
+\usepackage[onehalfspacing]{setspace}
+
+
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -57,11 +67,9 @@
 %	margin=0pt,
 %	font={bf,footnotesize}
 %}
-\geometry{top=2cm}
-\geometry{bottom=2.5cm}
-%\geometry{left=2.5cm}
-%\geometry{right=2cm}
-\renewcommand{\baselinestretch}{1.5}
+\numberwithin{equation}{section}
+\setcounter{secnumdepth}{3} % глубина нумеруемых разделов
+\setcounter{tocdepth}{3} % глубина оглавления
 \begin{document}
 \listoftodos
 \clearpage
