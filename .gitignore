@@ -1,4 +1,5 @@
 ermakov_thesis.pdf
+*/*-converted-to.pdf
 *.*~
 *.aux
 *.bbl
@@ -27,4 +28,4 @@ ermakov_thesis.pdf
 *.maf
 *.mtc
 *.mtc0
-*.gummi
+*.tdo
