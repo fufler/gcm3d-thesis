@@ -42,14 +42,14 @@
 Ниже приведены графики (см. рис. \ref{pic:mpi1host} и рис. \ref{pic:mpi2hosts} зависимости затрат на пересылку одного байта в зависимости от размера сообщения.
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.6\textwidth]{eps/mpi-1host.eps}
+\includegraphics[width=0.8\textwidth]{eps/mpi-1host.eps}
 \caption{Затраты на пересылки при использовании одного вычислительного
  узла}
 \label{pic:mpi1host}
 \end{figure}
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.6\textwidth]{eps/mpi-2hosts.eps}
+\includegraphics[width=0.8\textwidth]{eps/mpi-2hosts.eps}
 \caption{Затраты на пересылки при использовании двух вычислительных узлов}
 \label{pic:mpi2hosts}
 \end{figure}
@@ -165,14 +165,14 @@ v=v_1*\lambda_1+v_2*\lambda_2+v_3*\lambda_3,
 Для измерения производительности параллельной версии алгоритма были проведены расчёты одной и той же тестовой задачи на разном числе вычислительных узлов. В качестве тестовой задачи была взята задача о распространении волн в 24-слойной преграде. Каждый слой представляет собой прямоугольный параллелепипед размера 120x120x5 точек (86400 узлов, учитывая служебные, необходимые для восстановления локальной топологии удалённой сетки). На рисунках \ref{pic:gcm_boost} и \ref{pic:gcm_efficiency} представлены зависимости производительности и эффективности от числа используемых вычислительных узлов.
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.6\textwidth]{eps/gcm3d-boost.eps}
+\includegraphics[width=0.8\textwidth]{eps/gcm3d-boost.eps}
 \caption{Зависимость производительности от количества вычислительных узлов}
 \label{pic:gcm_boost}
 \end{figure}
 \begin{figure}[htp]
 \centering
-\includegraphics[width=0.6\textwidth]{eps/gcm3d-efficiency.eps}
+\includegraphics[width=0.8\textwidth]{eps/gcm3d-efficiency.eps}
 \caption{Зависимость эффективности использования кластера от количества вычислительных узлов}
 \label{pic:gcm_efficiency}
 \end{figure}
-Таким образом при использовании параллельной версии алгоритма получено ускорение в 10 раз на 12 вычислительных узлах (эффективность использования кластера $\approx 83\%$). Этот результат является очень хорошим достижением.\todo{Почему?}
+Таким образом при использовании параллельной версии алгоритма получено ускорение в 10 раз на 12 вычислительных узлах (эффективность использования кластера $\approx 83\%$). Этот результат является очень хорошим достижением.\todo{Переделать}
