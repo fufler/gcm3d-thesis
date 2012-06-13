@@ -2,17 +2,29 @@
 \subsection{Тестовые задачи}
 Для проверки корректности реализации параллельной версии алгоритма были
 произведены расчёты ряда тестовых задач.
-\subsubsection{Распространение P-волны}
-Для расчёта распространения P-волны в кубе были использованы следующие
-безразмерные параметры: 
+\subsubsection{Распространение продольной волны (P-волны)}
+Пусть плоская P-волна в среде распространяется вдоль оси z. В этом случае аналитическое решение соответствующего одномерного уравнения дает следующие соотношения на параметры волны:
 \begin{itemize}
-\item размеры: 50x50x50;
+\item $v_z=-f(z)\sqrt{\frac{\lambda+2\mu}{\rho}}=C_p$;
+\item $v_x=v_y=0$;
+\item $\sigma_{zz}=f(z)(\lambda+2\mu)$;
+\item $\sigma_{xx}=\sigma_{yy}=f(z)\lambda$;
+\item $\sigma_{ij}=0$ для $i \neq j$.
+\end{itemize}
+Здесь $f(z)$ - произвольная функция, зависящая только от z и задающая форму волны.
+Для расчёта распространения P-волны в кубе были использованы следующие безразмерные параметры: 
+\begin{itemize}
+\item размер расчётной области: 50x50x50;
 \item $\lambda=70000$;
-\item $\nu=10000$;
+\item $\mu=10000$;
 \item $\rho=1$.
 \end{itemize}
 На графиках (см. рис.
-\ref{pic:p_wave_2}-\ref{pic:p_wave_22}) представленые результаты численного расчёта.
+\ref{pic:p_wave_2}-\ref{pic:p_wave_22}) представленые результаты численного расчёта. Получено совпадение параметров волны с аналитическим решением:
+\begin{itemize}
+\item $v_z=C_p=300$;
+\item $\frac{\sigma_{zz}}{\sigma_{xx}}=\frac{\sigma_{zz}}{\sigma_{yy}}=\frac{\lambda+2\mu}{\lambda}=\frac{9}{7}$.
+\end{itemize}
 \begin{figure}[htp]
 \centering
 \includegraphics[width=0.8\textwidth]{png/p-wave-propogation-3d-002.png}
@@ -31,17 +43,27 @@
 \caption{Распространение P-волны, 22-й временной слой.}
 \label{pic:p_wave_22}
 \end{figure}
-\subsubsection{Распространение S-волны}
-Для расчёта распространения S-волны в кубе были использованы следующие
-безразмерные параметры: 
+\subsubsection{Распространение поперечной волны (S-волны)}
+Пусть плоская S-волна в среде распространяется вдоль оси z. В этом случае аналитическое решение соответствующего одномерного уравнения дает следующие соотношения на параметры волны:
 \begin{itemize}
-\item размеры: 50x50x50;
+\item $v_z=-f(z)\sqrt{\frac{\mu}{\rho}}=C_s$;
+\item $v_x=v_y=0$;
+\item $\sigma_{ij}=f(z)\mu$; для одной из пар $i \neq j$
+\item $\sigma_{ij}=0$ для $i = j$.
+\end{itemize}
+Здесь $f(z)$ - произвольная функция, зависящая только от z и задающая форму волны.
+Для расчёта распространения S-волны в кубе были использованы следующие безразмерные параметры: 
+\begin{itemize}
+\item размер расчётной области: 50x50x50;
 \item $\lambda=70000$;
-\item $\nu=10000$;
+\item $\mu=10000$;
 \item $\rho=1$.
 \end{itemize}
 На графиках (см. рис.
-\ref{pic:s_wave_2}-\ref{pic:s_wave_22}) представленые результаты численного расчёта.
+\ref{pic:s_wave_2}-\ref{pic:s_wave_22}) представленые результаты численного расчёта.Получено совпадение скорости волны с аналитическим решением:
+\begin{itemize}
+\item $v_z=C_s=100$.
+\end{itemize}
 \begin{figure}[htp]
 \centering
 \includegraphics[width=\textwidth]{png/s-wave-propogation-3d-002.png}
@@ -62,12 +84,11 @@
 \end{figure}
 \subsubsection{Сферический взрыв}
 Для проверки корректности расчёта при отражении от границ был произведён расчёт
-На графиках (см. рис.
 модельной задачи о сферическом взрыве со следующими параметрами:
 \begin{itemize}
-\item размеры: 50x50x50;
+\item размер расчётной области: 50x50x50;
 \item $\lambda=70000$;
-\item $\nu=10000$;
+\item $\mu=10000$;
 \item $\rho=1$.
 \end{itemize}
 На графиках (см. рис. \ref{pic:spherical_25}, \ref{pic:spherical_50}) изображены
@@ -81,9 +102,9 @@
 \begin{subfigure}[b]{0.5\textwidth}
 \centering
 \includegraphics[width=\textwidth]{png/v-vector-0025.png}
-\caption{Модули скоростей}
+\caption{Векторы скоростей}
 \end{subfigure}
-\caption{Расчёт задачи о сферическом врзыве, 25-й временной-слой.}
+\caption{Расчёт задачи о сферическом взрыве, 25-й временной слой.}
 \label{pic:spherical_25}
 \end{figure}
 \begin{figure}[htp]
@@ -95,9 +116,9 @@
 \begin{subfigure}[b]{0.5\textwidth}
 \centering
 \includegraphics[width=\textwidth]{png/v-vector-0050.png}
-\caption{Модули скоростей.}
+\caption{Векторы скоростей.}
 \end{subfigure}
-\caption{Расчёт задачи о сферическом врзыве, 50-й временной-слой.}
+\caption{Расчёт задачи о сферическом взрыве, 50-й временной слой.}
 \label{pic:spherical_50}
 \end{figure}
 \clearpage
@@ -118,9 +139,10 @@
 \caption{Безразмерные характеристики субпакетов.}
 \label{tbl:subpackage_2}
 \end{table}
-\itodo{Параметры удара?}
-На графиках (см. рис. \ref{pic:multilayer_init}-\ref{pic:multilayer_Rayleigh_2})
-изображены результаты численного расчёта задачи.
+
+Давление в зоне воздействия ударника задавалось равным 50 МПа (50 единиц в безразмерных величинах).
+
+На графиках (см. рис. \ref{pic:multilayer_init}-\ref{pic:multilayer_Rayleigh_2}) изображены результаты численного расчёта задачи.
 \begin{figure}[htp]
 \centering
 \includegraphics[width=\textwidth]{png/v-0001.png}
